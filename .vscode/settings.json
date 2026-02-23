@@ -1,0 +1,37 @@
+{
+  // Formatar automaticamente ao salvar
+  "editor.formatOnSave": true,
+  // Definir shfmt como formatador padrão para shell
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt",
+    "editor.tabSize": 2
+  },
+  // Configuração do shfmt
+  "shfmt.executableArgs": [
+    "-i",
+    "2", // indentação 2 espaços
+    "-ci", // indentação consistente
+    "-sr" // simplifica redirecionamentos
+  ],
+  // Habilitar ShellCheck
+  "shellcheck.enable": true,
+  "shellcheck.run": "onSave",
+  // Terminal integrado usando bash
+  "terminal.integrated.defaultProfile.linux": "bash",
+  // Evita problemas com LF/CRLF
+  "files.eol": "\n",
+  // Detecta arquivos como shellscript
+  "files.associations": {
+    "*.sh": "shellscript"
+  },
+  "cSpell.words": [
+    "commitadas",
+    "hackável",
+    "jesseduffield",
+    "Jonatas",
+    "jtools",
+    "lazydocker",
+    "pacman",
+    "Versionável"
+  ]
+}
