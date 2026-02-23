@@ -1,0 +1,5 @@
+REPO="jesseduffield/lazydocker"
+BINARY_NAME="lazydocker"
+ARCH="Linux_x86_64"
+TARBALL_TEMPLATE="lazydocker_{VERSION}_${ARCH}.tar.gz"
+CHECKSUM_FILE="checksums.txt"
