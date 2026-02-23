@@ -24,5 +24,5 @@ state_remove() {
 }
 
 state_list() {
-  jq -r 'keys[]' "$STATE_FILE"
+  jq -r 'to_entries[]? | "\(.key)@\(.value.version)"' "$STATE_FILE"
 }
