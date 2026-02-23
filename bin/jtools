@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+source "$BASE_DIR/lib/utils.sh"
+source "$BASE_DIR/lib/state.sh"
+source "$BASE_DIR/lib/installer.sh"
+source "$BASE_DIR/lib/core.sh"
+source "$BASE_DIR/lib/doctor.sh"
+
+VERSION=$(cat "$BASE_DIR/VERSION")
+
+case "${1:-}" in
+  install)
+    shift
+    core_install "$@"
+    ;;
+  remove)
+    shift
+    core_remove "$@"
+    ;;
+  list) core_list ;;
+  update)
+    shift
+    core_update "$@"
+    ;;
+  upgrade-all) core_upgrade_all ;;
+  doctor) doctor ;;
+  --version) echo "jtools $VERSION" ;;
+  *)
+    echo "jtools <command>"
+    echo "  install <pkg> [--force --dry-run --local]"
+    echo "  remove <pkg>"
+    echo "  list"
+    echo "  update <pkg>"
+    echo "  upgrade-all"
+    echo "  doctor"
+    ;;
+esac
