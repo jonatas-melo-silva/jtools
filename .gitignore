@@ -1,0 +1,11 @@
+# Ignorar o lock
+install.lock
+
+# Ignorar tudo dentro de /bin
+/bin/*
+
+# Mas permitir o jtools
+!/bin/jtools
+
+# Ignorar o arquivo de estado
+state.json
